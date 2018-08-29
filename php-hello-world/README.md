@@ -17,3 +17,10 @@ docker run -p 80:80 hello-world
 * -p flag is to map the port from the container to your machine
 * the name of the container is necessary
 
+3) Add volume to share the current folder between host and container
+```
+docker run -p 80:80 -v /path/to/our/file/src/:/var/www/html/ hello-world
+```
+
+* -v volume flag
+
