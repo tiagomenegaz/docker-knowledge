@@ -1,0 +1,19 @@
+# version 3 is the lastest docker-compose format file
+# it is related only to the file format
+version: '3'
+
+services:
+  # the name of the service
+  product-service-01:
+    # build path to dockerfile
+    build: ./product-service
+    # list of volumes to see code changes
+    volumes:
+      # left path depends on your computer
+      # right path depends on your image
+      # path/in/your/computer:/path/in/your/image/to/mount
+      - ./product-service:/usr/src/app
+    # list of ports
+    ports:
+      # you_computer_port:container_port
+      - 4001:80
