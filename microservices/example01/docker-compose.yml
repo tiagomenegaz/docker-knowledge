@@ -17,3 +17,17 @@ services:
     ports:
       # you_computer_port:container_port
       - 4001:80
+
+  # the name of the service
+  website:
+    # instead of building an image from a dockerfile
+    # you can chose to use an image direct from dockerhub
+    image: php:apache
+    # list of volumes to see code changes
+    volumes:
+      - ./website:/var/www/html
+    # list of ports
+    ports:
+      - 4000:80
+    depends_on:
+      - product-service-01
